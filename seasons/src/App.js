@@ -1,11 +1,15 @@
 import './App.css';
+import SeasonDisplay from './components/SeasonDisplay';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
+const App = () => {
+  window.navigator.geolocation.getCurrentPosition(
+    (position) => console.log(position),
+    (err) => console.log(err)
   );
-}
+
+  return (
+    <SeasonDisplay />
+  )
+};
 
 export default App;
