@@ -22,13 +22,15 @@ class SeasonDisplay extends Component {
   }
 
   render() {
-    return (
-      <div>
-        Latitude: {this.state.lat}
-        <br/>
-        {this.state.errMsg}
-      </div>
-    );
+    if(this.state.errMsg && !this.state.lat) {
+      return <div>Error: {this.state.errMsg}</div>
+    } 
+    if(!this.state.errMsg && this.state.lat) {
+      return <div>Latitude: {this.state.lat}</div>
+    }
+    if(!this.state.errMsg && !this.state.lat) {
+      return <div>Loading!</div>
+    }
   }
 
 }
