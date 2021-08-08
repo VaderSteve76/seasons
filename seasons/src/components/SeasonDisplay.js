@@ -7,7 +7,6 @@ const getSeason = (lat, month) => {
     return lat > 0 ? "Winter" : "Summer";
   }
 };
-
 class SeasonDisplay extends Component {
   // constructor(props) {
   //   super(props);
@@ -29,14 +28,18 @@ class SeasonDisplay extends Component {
   }
 
   render() {
+
     return (
-      <div>
+      <div id="season">
+        <h1>
         {getSeason === "winter"
           ? "It's cold outside, wear a jacket"
           : "Let's hit the beach"}
+        </h1>
       </div>
     );
   }
+
 }
 
 export default SeasonDisplay;
