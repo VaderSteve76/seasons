@@ -2,7 +2,40 @@
   text-align: center;
 }
 
-#season {
-  text-align: center;
-  padding-top: 40vh;
+.icon-left {
+position: absolute;
+top: 10px;
+left: 10px;
+}
+
+.icon-right {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.season-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 20px;
+}
+
+.summer {
+  background-color: rgb(255, 229, 174);
+}
+
+.winter {
+  background-color: rgb(187, 220, 249);
+}
+
+.season-display.winter h1 {
+  font-size: 45px;
+  text-shadow: 3px 3px rgb(107, 181, 245);
+}
+
+.season-display.summer h1 {
+  font-size: 45px;
+  text-shadow: 3px 3px rgb(255, 183, 0);
 }

@@ -3,11 +3,11 @@ import { React, Component } from "react";
 const seasonConfig = {
   summer: {
     text: "let's hit the beach",
-    iconName: "sun"
+    iconName: "orange sun massive"
   },
   winter: {
     text: "It's cold, wear a jacket",
-    iconName: "snowflake"
+    iconName: "blue snowflake massive"
   }
 };
 
@@ -32,10 +32,10 @@ class SeasonDisplay extends Component {
     const season = getSeason(this.lat, new Date().getMonth());
     const {text, iconName } = seasonConfig[season];
     return (
-      <div id="season">
-        <i className={`${iconName} icon extra large`} />
-        <h1>{text}</h1>
-        <i className={`${iconName} icon extra large`} />
+      <div className={`season-display ${season}`}>
+        <i className={`icon-left ${iconName} icon`} />
+        <h1 className="text">{text}</h1>
+        <i className={`icon-right ${iconName} icon`} />
       </div>
     );
   }
