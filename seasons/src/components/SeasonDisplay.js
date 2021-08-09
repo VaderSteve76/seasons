@@ -23,19 +23,14 @@ class SeasonDisplay extends Component {
     );
   }
 
-  componentDidUpdate() {
-    console.log("Component updated");
-  }
-
   render() {
-
+    const season = getSeason(this.lat, new Date().getMonth());
+    const text = season === "winter" ? "It's cold outside, wear a jacket" : "Let's hit the beach";
+    const icon = season === "winter" ? "snowflake" : "sun";
     return (
       <div id="season">
-        <h1>
-        {getSeason === "winter"
-          ? "It's cold outside, wear a jacket"
-          : "Let's hit the beach"}
-        </h1>
+        <i className={`${icon} icon extra large`} />
+        <h1>{text}</h1>
       </div>
     );
   }
