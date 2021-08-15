@@ -1,4 +1,5 @@
 import { React, Component } from "react";
+import Spinner from './Loader';
 
 const seasonConfig = {
   summer: {
@@ -8,14 +9,6 @@ const seasonConfig = {
   winter: {
     text: "It's cold, wear a jacket",
     iconName: "blue snowflake massive"
-  }
-};
-
-const getSeason = (lat, month) => {
-  if (month > 2 && month < 9) {
-    return lat > 0 ? "summer" : "winter";
-  } else {
-    return lat > 0 ? "winter" : "summer";
   }
 };
 class SeasonDisplay extends Component {
@@ -29,8 +22,19 @@ class SeasonDisplay extends Component {
   }
 
   render() {
+
+    function getSeason(lat, month) {
+      if (month > 2 && month < 9) {
+        return lat > 0 ? "summer" : "winter";
+      } else {
+        return lat > 0 ? "winter" : "summer";
+      }
+    };
+
     const season = getSeason(this.lat, new Date().getMonth());
+    console.log(getSeason(this.lat, new Date().getMonth()));
     const {text, iconName } = seasonConfig[season];
+
     return (
       <div className={`season-display ${season}`}>
         <i className={`icon-left ${iconName} icon`} />
